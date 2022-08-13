@@ -1,0 +1,101 @@
+{
+    "widgets": [
+        {
+            "height": 6,
+            "width": 12,
+            "y": 0,
+            "x": 0,
+            "type": "metric",
+            "properties": {
+                "metrics": [
+                    [ "k6", "k6_vus", "metric_type", "gauge" ]
+                ],
+                "view": "timeSeries",
+                "stacked": false,
+                "region": "ap-northeast-2",
+                "title": "Virtual Users",
+                "stat": "Average",
+                "period": 1
+            }
+        },
+        {
+            "height": 6,
+            "width": 12,
+            "y": 0,
+            "x": 12,
+            "type": "metric",
+            "properties": {
+                "metrics": [
+                    [ "k6", "k6_http_reqs", "metric_type", "counter" ]
+                ],
+                "view": "timeSeries",
+                "stacked": false,
+                "region": "ap-northeast-2",
+                "title": "RPS",
+                "stat": "Average",
+                "period": 1
+            }
+        },
+        {
+            "height": 6,
+            "width": 12,
+            "y": 6,
+            "x": 0,
+            "type": "metric",
+            "properties": {
+                "metrics": [
+                    [ "k6", "k6_http_req_sending", "metric_type", "timing" ],
+                    [ ".", "k6_http_req_receiving", ".", "." ],
+                    [ ".", "k6_http_req_tls_handshaking", ".", "." ],
+                    [ ".", "k6_http_req_waiting", ".", "." ],
+                    [ ".", "k6_http_req_connecting", ".", "." ],
+                    [ ".", "k6_http_req_blocked", ".", "." ]
+                ],
+                "view": "timeSeries",
+                "stacked": false,
+                "region": "ap-northeast-2",
+                "stat": "Average",
+                "period": 1,
+                "title": "Response Times"
+            }
+        },
+        {
+            "height": 6,
+            "width": 6,
+            "y": 6,
+            "x": 12,
+            "type": "metric",
+            "properties": {
+                "metrics": [
+                    [ "k6", "k6_iteration_duration", "metric_type", "timing" ],
+                    [ ".", "k6_iterations", ".", "counter" ]
+                ],
+                "view": "timeSeries",
+                "stacked": false,
+                "title": "Iterations",
+                "region": "<REGION>",
+                "stat": "Average",
+                "period": 1
+            }
+        },
+        {
+            "height": 6,
+            "width": 6,
+            "y": 6,
+            "x": 18,
+            "type": "metric",
+            "properties": {
+                "metrics": [
+                    [ "k6", "k6_data_sent", "metric_type", "counter" ],
+                    [ ".", "k6_data_received", ".", "." ]
+                ],
+                "view": "timeSeries",
+                "stacked": true,
+                "title": "Data Transfer",
+                "region": "ap-northeast-2",
+                "stat": "Sum",
+                "period": 1
+            }
+        }
+    ]
+}
