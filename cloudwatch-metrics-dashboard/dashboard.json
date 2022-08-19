@@ -73,7 +73,7 @@
                 "view": "timeSeries",
                 "stacked": false,
                 "title": "Iterations",
-                "region": "<REGION>",
+                "region": "ap-northeast-2",
                 "stat": "Average",
                 "period": 1
             }
