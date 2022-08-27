@@ -45,6 +45,6 @@ Then open the dashboard, select "Action -> View/edit source" paste the template.
 
 
 ## References
-https://k6.io/docs/results-visualization/amazon-cloudwatch/
-https://github.com/aws/amazon-cloudwatch-agent/blob/master/amazon-cloudwatch-container-insights/ecs-task-definition-templates/deployment-mode/sidecar/cwagent-emf/README.md
-https://github.com/grafana/k6-example-cloudwatch-dashboards
+* https://k6.io/docs/results-visualization/amazon-cloudwatch/
+* https://github.com/aws/amazon-cloudwatch-agent/blob/master/amazon-cloudwatch-container-insights/ecs-task-definition-templates/deployment-mode/sidecar/cwagent-emf/README.md
+* https://github.com/grafana/k6-example-cloudwatch-dashboards
