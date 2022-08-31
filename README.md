@@ -42,9 +42,17 @@ Create a new CloudWatch Dashboard in the AWS Console.
 Then open the dashboard, select "Action -> View/edit source" paste the template.
 ![Edit CloudWatch Dashboard](img/edit_dashboard.png?raw=true "Edit CloudWatch Dashboard")
 
-
-
 ## References
 * https://k6.io/docs/results-visualization/amazon-cloudwatch/
 * https://github.com/aws/amazon-cloudwatch-agent/blob/master/amazon-cloudwatch-container-insights/ecs-task-definition-templates/deployment-mode/sidecar/cwagent-emf/README.md
 * https://github.com/grafana/k6-example-cloudwatch-dashboards
+tory description on GitHub
+
+## Security
+
+See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more information.
+
+## License
+
+This library is licensed under the MIT-0 License. See the LICENSE file.
+
