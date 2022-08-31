@@ -52,7 +52,6 @@ After creating the dashboard, you can monitor the load tests with CloudWatch das
 * https://k6.io/docs/results-visualization/amazon-cloudwatch/
 * https://github.com/aws/amazon-cloudwatch-agent/blob/master/amazon-cloudwatch-container-insights/ecs-task-definition-templates/deployment-mode/sidecar/cwagent-emf/README.md
 * https://github.com/grafana/k6-example-cloudwatch-dashboards
-tory description on GitHub
 
 ## Security
 
