@@ -43,18 +43,21 @@ class CdkStack(Stack):
                                       ]
                                       )
         task_definition = aws_ecs.TaskDefinition(self, 'K6Task', compatibility=aws_ecs.Compatibility.FARGATE,
-                                                 cpu='1024',
-                                                 memory_mib='2048',
+                                                 cpu='16384',
+                                                 memory_mib='65536',
                                                  execution_role=execution_role
                                                  )
 
         task_definition.task_role.add_managed_policy(aws_iam.ManagedPolicy
                                                      .from_aws_managed_policy_name("CloudWatchAgentServerPolicy"))
 
-        task_definition.add_container('k6',
-                                      image=aws_ecs.ContainerImage.from_ecr_repository(repository),
-                                      logging=aws_ecs.LogDriver.aws_logs(stream_prefix=cluster.cluster_name)
-                                      )
+        k6_container = task_definition.add_container('k6',
+                                                     image=aws_ecs.ContainerImage.from_ecr_repository(repository),
+                                                     logging=aws_ecs.LogDriver.aws_logs(
+                                                         stream_prefix=cluster.cluster_name)
+                                                     )
+
+        k6_container.add_ulimits(aws_ecs.Ulimit(soft_limit=8192, hard_limit=32768, name=aws_ecs.UlimitName.NOFILE))
 
         ssm_parameter = aws_ssm.StringParameter(self, 'statsd-config', parameter_name='ecs-cwagent-sidecar-fargate',
                                                 string_value="""
@@ -64,7 +67,7 @@ class CdkStack(Stack):
         "metrics_collected": {
             "statsd": {
                 "service_address": ":8125",
-                "metrics_collection_interval": 5,
+                "metrics_collection_interval": 1,
                 "metrics_aggregation_interval": 0
             }
         }
